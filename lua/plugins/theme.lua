@@ -1,0 +1,1 @@
+/home/datadiego/.config/omarchy/current/theme/neovim.lua
