@@ -4,6 +4,7 @@ return {
   build = "make",
   opts = {
     provider = "ollama",
+    stream = false,
     providers = {
       ollama = {
         endpoint = "http://localhost:11434",
