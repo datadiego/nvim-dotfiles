@@ -9,10 +9,12 @@
     ],
     "description": "Crea un endpoint en Express con TypeScript"
   },
+
   "expressApp": {
     "prefix": "expressApp",
     "body": [
       "import express from 'express';",
+      "",
       "const app: express.Application = express();",
       "const PORT: number = parseInt(process.env.PORT || '3000');",
       "",
@@ -20,8 +22,6 @@
       "",
       "// Endpoint GET básico",
       "app.get('/', (req: express.Request, res: express.Response) => {",
-      "  // req: express.Request  → params, query, body, headers...",
-      "  // res: express.Response → send(), json(), status(), etc.",
       "  res.send('¡Hola desde Express con TypeScript!');",
       "});",
       "",
@@ -29,7 +29,43 @@
       "  console.log(`Servidor corriendo en el puerto ${PORT}`);",
       "});"
     ],
-    "description": "Ejemplo básico de GET en Express mostrando tipos"
+    "description": "Configura una aplicación básica de Express con TypeScript"
+  },
+
+  "fetchGet": {
+    "prefix": "fetchGet",
+    "body": [
+      "fetch('${1:url}')",
+      "  .then((response: Response) => response.${2|json,text|}())",
+      "  .then((data: ${3:any}) => {",
+      "    console.log(data);",
+      "  })",
+      "  .catch((error: unknown) => {",
+      "    console.error('Error:', error);",
+      "  });"
+    ],
+    "description": "Hace un fetch GET en TypeScript"
+  },
+
+  "fetchPost": {
+    "prefix": "fetchPost",
+    "body": [
+      "fetch('${1:url}', {",
+      "  method: 'POST',",
+      "  headers: {",
+      "    'Content-Type': 'application/json'",
+      "  },",
+      "  body: JSON.stringify(${2:data})",
+      "})",
+      "  .then((response: Response) => response.${3|json,text|}())",
+      "  .then((data: ${4:any}) => {",
+      "    console.log(data);",
+      "  })",
+      "  .catch((error: unknown) => {",
+      "    console.error('Error:', error);",
+      "  });"
+    ],
+    "description": "Hace un fetch POST con JSON en TypeScript"
   }
 }
 
