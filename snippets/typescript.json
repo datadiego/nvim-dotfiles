@@ -1,0 +1,35 @@
+{
+  "expressEndpoint": {
+    "prefix": "route",
+    "body": [
+      "app.${1|get,post,put,delete|}('${2:/ruta}', (req: express.Request, res: express.Response) => {",
+      "  ${3:// tu código aquí}",
+      "  res.${4|send,json|}(${5});",
+      "});"
+    ],
+    "description": "Crea un endpoint en Express con TypeScript"
+  },
+  "expressApp": {
+    "prefix": "expressApp",
+    "body": [
+      "import express from 'express';",
+      "const app: express.Application = express();",
+      "const PORT: number = parseInt(process.env.PORT || '3000');",
+      "",
+      "app.use(express.json());",
+      "",
+      "// Endpoint GET básico",
+      "app.get('/', (req: express.Request, res: express.Response) => {",
+      "  // req: express.Request  → params, query, body, headers...",
+      "  // res: express.Response → send(), json(), status(), etc.",
+      "  res.send('¡Hola desde Express con TypeScript!');",
+      "});",
+      "",
+      "app.listen(PORT, () => {",
+      "  console.log(`Servidor corriendo en el puerto ${PORT}`);",
+      "});"
+    ],
+    "description": "Ejemplo básico de GET en Express mostrando tipos"
+  }
+}
+
