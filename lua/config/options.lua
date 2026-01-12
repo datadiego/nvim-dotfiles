@@ -4,3 +4,5 @@
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.wrap = true
+-- disable copilot
+vim.g.copilot_enabled = false
