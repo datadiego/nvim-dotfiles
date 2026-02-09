@@ -27,6 +27,13 @@
     ],
     "description": "Crea una tabla nueva"
   },
+  "columnSQLite": {
+    "prefix": "columnSQLite",
+    "body": [
+      "${1:columna} ${2|INTEGER,REAL,BLOB,TEXT,NULL|} ${3|NOT NULL,DEFAULT 'valor',UNIQUE|},"
+    ],
+    "description": "Define una columna en SQLite"
+  },
   "createMySQL": {
     "prefix": "createMySQL",
     "body": [
