@@ -9,6 +9,7 @@
     ],
     "description": "Crea un endpoint en Express"
   },
+
   "expressApp": {
     "prefix": "expressApp",
     "body": [
@@ -24,6 +25,7 @@
     ],
     "description": "Configura una aplicación básica de Express"
   },
+
   "fetchGet": {
     "prefix": "fetchGet",
     "body": [
@@ -38,6 +40,7 @@
     ],
     "description": "Hace un fetch GET"
   },
+
   "fetchPost": {
     "prefix": "fetchPost",
     "body": [
@@ -57,6 +60,54 @@
       "  });"
     ],
     "description": "Hace un fetch POST con JSON"
-  }
+  },
+
+  "qs": {
+  "prefix": "qs",
+  "body": [
+    "const ${1:element} = document.querySelector('${2:selector}');"
+  ],
+  "description": "querySelector rápido"
+},
+
+  "qsa": {
+  "prefix": "qsa",
+  "body": [
+    "const ${1:elements} = document.querySelectorAll('${2:selector}');"
+  ],
+  "description": "querySelectorAll rápido"
+  },
+
+  "createElement": {
+  "prefix": "createElement",
+  "body": [
+    "const ${1:element} = document.createElement('${2:tag}');",
+  ],
+  "description": "Crear y agregar un elemento al DOM"
+},
+  "appendChild": {
+  "prefix": "appendChild",
+  "body": [
+    "${1:parent}.appendChild(${2:child});"
+  ],
+  "description": "appendChild rápido"
+},
+
+  "class": {
+  "prefix": "class",
+  "body": [
+    "class ${1:Nombre} {",
+    "  constructor(${2:params}) {",
+    "    ${3:// init}",
+    "  }",
+    "",
+    "  ${4:metodo}() {",
+    "    ${5:// lógica}",
+    "  }",
+    "}"
+  ],
+  "description": "Plantilla de clase JS"
+}
+
 }
 

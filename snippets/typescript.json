@@ -1,37 +1,4 @@
 {
-  "expressEndpoint": {
-    "prefix": "route",
-    "body": [
-      "app.${1|get,post,put,delete|}('${2:/ruta}', (req: express.Request, res: express.Response) => {",
-      "  ${3:// tu código aquí}",
-      "  res.${4|send,json|}(${5});",
-      "});"
-    ],
-    "description": "Crea un endpoint en Express con TypeScript"
-  },
-
-  "expressApp": {
-    "prefix": "expressApp",
-    "body": [
-      "import express from 'express';",
-      "",
-      "const app: express.Application = express();",
-      "const PORT: number = parseInt(process.env.PORT || '3000');",
-      "",
-      "app.use(express.json());",
-      "",
-      "// Endpoint GET básico",
-      "app.get('/', (req: express.Request, res: express.Response) => {",
-      "  res.send('¡Hola desde Express con TypeScript!');",
-      "});",
-      "",
-      "app.listen(PORT, () => {",
-      "  console.log(`Servidor corriendo en el puerto ${PORT}`);",
-      "});"
-    ],
-    "description": "Configura una aplicación básica de Express con TypeScript"
-  },
-
   "fetchGet": {
     "prefix": "fetchGet",
     "body": [
@@ -66,6 +33,54 @@
       "  });"
     ],
     "description": "Hace un fetch POST con JSON en TypeScript"
-  }
+  },
+
+  "fetchAsync": {
+  "prefix": "fetchAsync",
+  "body": [
+    "try {",
+    "  const response: Response = await fetch('${1:url}');",
+    "  if (!response.ok) {",
+    "    throw new Error(`HTTP error! status: ${response.status}`);",
+    "  }",
+    "  const data: ${2:any} = await response.${3|json,text|}();",
+    "  console.log(data);",
+    "} catch (error: unknown) {",
+    "  console.error('Error:', error);",
+    "}"
+  ],
+  "description": "Fetch con async/await en TypeScript"
+},
+
+  "tryCatch": {
+  "prefix": "tryc",
+  "body": [
+    "try {",
+    "  ${1:// código}",
+    "} catch (error: unknown) {",
+    "  console.error(error);",
+    "}"
+  ],
+  "description": "Bloque try/catch en TypeScript"
+},
+
+  "expressRoute": {
+  "prefix": "route",
+  "body": [
+    "router.${1|get|post|put|delete|}('${2:/ruta}', async (req: Request, res: Response) => {",
+    "  try {",
+    "    ${3:// lógica}",
+    "    res.json(${4:{}});",
+    "  } catch (error: unknown) {",
+    "    res.status(500).json({ error: 'Error interno' });",
+    "  }",
+    "});"
+  ],
+  "description": "Ruta de Express tipada en TypeScript"
+},
+
+
+
+
 }
 

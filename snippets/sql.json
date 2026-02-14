@@ -7,6 +7,7 @@
     ],
     "description": "Inserta valores en una tabla"
   },
+
   "updateTable": {
     "prefix": "update",
     "body": [
@@ -16,6 +17,7 @@
     ],
     "description": "Actualiza valores de una tabla con condición"
   },
+
   "createSQLite": {
     "prefix": "createSQLite",
     "body": [
@@ -27,6 +29,7 @@
     ],
     "description": "Crea una tabla nueva"
   },
+
   "columnSQLite": {
     "prefix": "columnSQLite",
     "body": [
@@ -34,6 +37,7 @@
     ],
     "description": "Define una columna en SQLite"
   },
+
   "createMySQL": {
     "prefix": "createMySQL",
     "body": [
@@ -45,6 +49,7 @@
     ],
     "description": "Crea una tabla nueva en MySQL"
   },
+
   "createPostgreSQL": {
     "prefix": "createPostgreSQL",
     "body": [
@@ -56,13 +61,7 @@
     ],
     "description": "Crea una tabla nueva en PostgreSQL"
   },
-  "columnSQLite": {
-    "prefix": "columnSQLite",
-    "body": [
-      "${1:columna} ${2|INTEGER,REAL,BLOB,TEXT,NULL|} ${3|NOT NULL,DEFAULT 'valor',UNIQUE|},"
-    ],
-    "description": "Define una columna en SQLite"
-  },
+
   "columnMySQL": {
     "prefix": "columnMySQL",
     "body": [
@@ -70,6 +69,7 @@
     ],
     "description": "Define una columna en MySQL"
   },
+
   "columnPostgreSQL": {
     "prefix": "columnPostgreSQL",
     "body": [
@@ -77,6 +77,7 @@
     ],
     "description": "Define una columna en PostgreSQL"
   },
+
   "createView": {
     "prefix": "createView",
     "body": [
@@ -87,6 +88,7 @@
     ],
     "description": "Crea una vista basada en una consulta"
   },
+
   "join": {
     "prefix": "join",
     "body": [
@@ -103,6 +105,21 @@
       "CREATE SCHEMA public;"
     ],
     "description": "Elimina todas las tablas en PostgreSQL"
-  }
+  },
+
+"functionPostgre": {
+  "prefix": "functionPostgre",
+  "body": [
+    "CREATE OR REPLACE FUNCTION ${1:nombre_funcion}(${2:parametros})",
+    "RETURNS ${3:tipo_retorno} AS \\$\\$",
+    "DECLARE",
+    "  ${4:variables}",
+    "BEGIN",
+    "  ${5:cuerpo_funcion}",
+    "END;",
+    "\\$\\$ LANGUAGE plpgsql;"
+  ],
+  "description": "Crea una función en PostgreSQL"
+}
 }
 
