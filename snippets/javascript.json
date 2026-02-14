@@ -81,10 +81,11 @@
   "createElement": {
   "prefix": "createElement",
   "body": [
-    "const ${1:element} = document.createElement('${2:tag}');",
+    "const ${1:element} = document.createElement('${2:tag}');"
   ],
   "description": "Crear y agregar un elemento al DOM"
 },
+
   "appendChild": {
   "prefix": "appendChild",
   "body": [
